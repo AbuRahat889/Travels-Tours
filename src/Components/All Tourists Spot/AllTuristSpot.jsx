@@ -35,12 +35,13 @@ const AllTuristSpot = () => {
       {/* end hero */}
 
       <div className="align ">
+        <h1>length {turistSpot.length}</h1>
         {turistSpot.map((spot) => (
           <div key={spot._id}>
             <div className="card lg:card-side bg-base-100 shadow-xl mb-5">
               <figure>
                 
-                <img src={spot.photo} alt="Album" />
+                <img src={spot.photo} alt="Album" className="w-96"/>
                 
               </figure>
               <div className="card-body flex justify-center">

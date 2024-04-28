@@ -67,6 +67,7 @@ const Navbar = () => {
             <NavLink className="text-xl font-semibold" to={"/mylist"}>
               My List
             </NavLink>
+            
           </ul>
         </div>
         <div className="navbar-end gap-3 ">

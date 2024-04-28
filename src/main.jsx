@@ -17,6 +17,8 @@ import Mylist from "./Components/My List/Mylist";
 import Details from "./Components/Details/Details";
 
 
+
+
 const router = new createBrowserRouter([
   {
     path: "/",
@@ -25,11 +27,12 @@ const router = new createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader:()=> fetch('http://localhost:5000/user'),
       },
       {
         path:'/allturistspot',
         element:<AllTuristSpot></AllTuristSpot>,
-        loader:()=>fetch(`http://localhost:5000/user`),
+        loader:()=>fetch('http://localhost:5000/user'),
       },
       {
         path:'/mylist',

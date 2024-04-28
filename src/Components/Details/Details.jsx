@@ -38,7 +38,7 @@ const Details = () => {
         <div className="hero-content flex-col lg:flex-row">
           <img
             src={loader.photo}
-            className=" rounded-lg shadow-2xl"
+            className=" rounded-lg shadow-2xl w-2/4"
           />
           <div className="">
             <h1 className="text-5xl font-bold">{loader.tourists_spot_name}</h1>
