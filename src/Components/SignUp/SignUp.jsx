@@ -54,11 +54,11 @@ const SignUp = () => {
   return (
     <div>
       <Helmet>
-        <title>UrbanNest | sign up</title>
+        <title>WanderWise | sign up</title>
       </Helmet>
       <ToastContainer />
-      <div className=" text-center bg-[#3e00e75d]">
-        <h1 className="text-4xl font-semibold p-5">Sign Up</h1>
+      <div className=" text-center bg-[#004c85]">
+        <h1 className="text-4xl text-white font-semibold p-5">Sign Up</h1>
       </div>
       <div className="hero bg-base-200 ">
         <div className="card w-full max-w-sm shadow-2xl bg-base-100 my-10">
