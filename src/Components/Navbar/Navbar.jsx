@@ -18,7 +18,7 @@ const Navbar = () => {
       <Subnav></Subnav>
       {/* main NavBar */}
 
-      <div className="navbar  py-5 ">
+      <div className="navbar  py-5">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -63,7 +63,7 @@ const Navbar = () => {
             </NavLink>
             {/* home001 */}
             <NavLink className="text-xl font-semibold mr-5" to={"/addturistspot"}>
-              Add Spot
+            Add Tourists Spot
             </NavLink>
             <NavLink className="text-xl font-semibold" to={"/mylist"}>
               My List

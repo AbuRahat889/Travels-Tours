@@ -59,7 +59,7 @@ const AddTuristSpot = () => {
         className="hero"
         style={{
           backgroundImage:
-            "url(https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg)",
+            "url(https://i.ibb.co/372jQVq/mountains-3059528-1920.jpg)",
         }}
       >
         <div className="hero-overlay bg-opacity-60 h-60"></div>
@@ -81,12 +81,6 @@ const AddTuristSpot = () => {
         </div>
       </div>
 
-      {/* <form onSubmit={handleForm} className="bg-red-500 p-10 space-y-7">
-        <input type="text" name="name" id="" /> <br />
-        <input type="email" name="email" id="" /> <br />
-        <input type="text" name="rahat" id="" />
-        <input type="submit" value="submit" />
-      </form> */}
 
       <div className="bg-[#F4F3F0] p-24 align">
         <h2 className="text-3xl font-extrabold">Add a Turist Spot</h2>

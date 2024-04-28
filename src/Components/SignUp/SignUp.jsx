@@ -2,7 +2,7 @@
 import { Helmet } from "react-helmet-async";
 import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { AuthContex } from "../../Contex/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 
@@ -40,6 +40,9 @@ const SignUp = () => {
       .then((res) => {
         console.log(res);
         alert("Successfully create your accountttttt"); 
+        e.target.restt();
+
+        Navigate(location ? location: '/');
         
         updateUserInfo(userName, image);
       
@@ -48,6 +51,7 @@ const SignUp = () => {
         const errorMessage = error.message;
         // setShowError(errorMessage);
         alert(errorMessage);
+        e.target.reset();
       });
   };
 

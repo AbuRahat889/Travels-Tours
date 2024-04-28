@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Typewriter from "typewriter-effect";
 
 const Slider = () => {
   return (
@@ -14,18 +15,32 @@ const Slider = () => {
             }}
           >
             <div className="  ">
-              <div className="-ml-10">
+
+              <div className="-ml-20">
                 <h1 className="mb-5 text-9xl font-bold text-white satisfy">
-                  Find your <span className="text-warning">next tour</span>{" "}
+                  Find your{" "}
+                  <span className="text-warning">next tour</span>{" "}
                 </h1>
+
                 <div className="divider divider-warning w-24"></div>
                 <p className="mb-5  text-4xl font-semibold text-white">
-                  Where would you like to go?.
+                  Where would you 
+                  <span className="">
+                  <Typewriter
+                      options={{
+                        strings: ["like to go? "],
+                        autoStart: true,
+                        loop: true,
+                      }}
+                    />
+                    </span>
+                  
                 </p>
-                <Link to={" "}>
+                <Link to={"/allturistspot"}>
                   <button className="btn btn-warning">View Spot</button>
                 </Link>
               </div>
+
             </div>
           </div>
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -82,11 +97,13 @@ const Slider = () => {
             <div className="hero-overlay bg-opacity-50"></div>
             <div className="hero-content text-right text-neutral-content">
               <div className="">
-                <h1 className="text-2xl font-semibold tracking-wide">Are You Ready to Travel</h1>
-                <h1 className="mb-5 text-9xl font-black">
-                ADVENTURE</h1>
-                <span className="text-7xl text-[#ff0143] satisfy">begins from now!</span>{" "}
-                
+                <h1 className="text-2xl font-semibold tracking-wide">
+                  Are You Ready to Travel
+                </h1>
+                <h1 className="mb-5 text-9xl font-black">ADVENTURE</h1>
+                <span className="text-7xl text-[#ff0143] satisfy">
+                  begins from now!
+                </span>{" "}
               </div>
             </div>
           </div>

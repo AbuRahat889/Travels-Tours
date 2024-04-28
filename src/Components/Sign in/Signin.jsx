@@ -8,7 +8,7 @@ import {
   import { useContext, useRef, useState } from "react";
   import { FaEye, FaEyeSlash } from "react-icons/fa";
   import auth from "../firebase";
-  import { Link, useLocation, useNavigate } from "react-router-dom";
+  import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
   import { AuthContex } from "../../Contex/AuthProvider";
   
   
@@ -34,6 +34,7 @@ import {
           const credential = FacebookAuthProvider.credentialFromResult(result);
           const accessToken = credential.accessToken;
           alert("successfully sign in!!!")
+          Navigate(location?.state ? location.state : '/');
         })
         .catch((error) => {
           // Handle Errors here.
@@ -58,6 +59,7 @@ import {
           console.log(logInUsesr);
           setUser(logInUsesr);
           alert("sign in successfully!!")
+          navigate(location?.state ? location.state : '/');
         })
         .catch((error) => {
           const errorMessage = error.message;

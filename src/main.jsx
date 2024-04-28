@@ -15,6 +15,8 @@ import AllTuristSpot from './Components/All Tourists Spot/AllTuristSpot';
 import AddTuristSpot from "./Components/Add Turist Spot/AddTuristSpot";
 import Mylist from "./Components/My List/Mylist";
 import Details from "./Components/Details/Details";
+import ErrorPage from "./Components/Utility/ErrorPage";
+import PrivateRoute from "./Components/Private Route/PrivateRoute";
 
 
 
@@ -23,6 +25,7 @@ const router = new createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    errorElement:<ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -36,12 +39,16 @@ const router = new createBrowserRouter([
       },
       {
         path:'/mylist',
-        element:<Mylist></Mylist>,
+        element:<PrivateRoute>
+          <Mylist></Mylist>
+        </PrivateRoute>,
         loader: () => fetch("http://localhost:5000/user"),
       },
       {
         path:'/addturistspot',
-        element:<AddTuristSpot></AddTuristSpot>
+        element:<PrivateRoute>
+          <AddTuristSpot></AddTuristSpot>
+        </PrivateRoute>
         
       },
       {

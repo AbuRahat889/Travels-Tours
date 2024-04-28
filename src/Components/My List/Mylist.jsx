@@ -16,7 +16,7 @@ const Mylist = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.deletedCount>0) {
+        if (data.deletedCount > 0) {
           alert("Deleted Data successfully..");
           const reaming = deleteUser.filter((user) => user._id !== _id);
           setDeleteUser(reaming);
@@ -25,10 +25,35 @@ const Mylist = () => {
   };
 
   return (
-    <div className="align">
-      <h1>this is banner page</h1>
-      <h1>{loaders.length}</h1>
-      <div>
+    <div className="">
+      {/* hero  */}
+      <div
+        className="hero"
+        style={{
+          backgroundImage:
+            "url(https://i.ibb.co/372jQVq/mountains-3059528-1920.jpg)",
+        }}
+      >
+        <div className="hero-overlay bg-opacity-60 h-60"></div>
+        <div className="hero-content text-center text-neutral-content">
+          <div className="max-w-md">
+            <h1 className="mb-5 text-5xl font-bold">Add Turist Spot</h1>
+
+            <div className="text-sm breadcrumbs">
+              <ul>
+                <li>
+                  <Link to={"/"}>Home</Link>
+                </li>
+                <li>
+                  <Link to={"/mylist"}>Mylist</Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="align">
         {loaders.map((loader) => (
           <h1 key={loader._id}>
             {loader.name} : {loader.email} : {loader._id}
@@ -36,8 +61,9 @@ const Mylist = () => {
               {" "}
               delete
             </button>
-            
-            <Link to={`/update/${loader._id}`} className="btn"><button>update</button></Link>
+            <Link to={`/update/${loader._id}`} className="btn">
+              <button>update</button>
+            </Link>
           </h1>
         ))}
       </div>

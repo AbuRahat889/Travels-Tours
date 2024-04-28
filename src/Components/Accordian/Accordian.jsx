@@ -11,7 +11,7 @@ const Accordian = () => {
           CALL OUR AGENTS TO BOOK!
         </h1>
         <h1 className="text-6xl font-semibold">
-          Tripo Award Winning and Top <br />
+        WanderWise Award Winning and Top <br />
           Rated Tour Operator
         </h1>
       </div>
