@@ -5,13 +5,15 @@ import { HelmetProvider } from "react-helmet-async";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import Home from "./Components/Home/Home";
-import Banner from "./Components/Banner/Banner";
-import Home001 from "./Components/Home/Home001";
 import SignIn from "./Components/Sign in/Signin";
 import AuthProvider from "./Contex/AuthProvider";
 import SignUp from "./Components/SignUp/SignUp";
+import Update from "./Components/Update/Update";
 
 // import AuthProvider from './Contex/AuthProvider'
+import AllTuristSpot from './Components/All Tourists Spot/AllTuristSpot';
+import AddTuristSpot from "./Components/Add Turist Spot/AddTuristSpot";
+import Mylist from "./Components/My List/Mylist";
 
 const router = new createBrowserRouter([
   {
@@ -23,13 +25,21 @@ const router = new createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: "/banner",
-        element: <Banner></Banner>,
+        path:'/allturistspot',
+        element:<AllTuristSpot></AllTuristSpot>
+      },
+      {
+        // path: "/banner",
+        path:'/mylist',
+        // element: <Banner></Banner>,
+        element:<Mylist></Mylist>,
         loader: () => fetch("http://localhost:5000/user"),
       },
       {
-        path: "/home001",
-        element: <Home001></Home001>,
+        // path: "/home001",
+        // element: <Home001></Home001>,
+        path:'/addturistspot',
+        element:<AddTuristSpot></AddTuristSpot>
       },
       {
         path: "/signin",
@@ -38,6 +48,11 @@ const router = new createBrowserRouter([
       {
         path:'/signup',
         element:<SignUp></SignUp>
+      },
+      {
+        path:'/update/:id',
+        element:<Update></Update>,
+        loader: ({ params }) => fetch(`http://localhost:5000/user/${params.id}`)    
       }
     ],
   },

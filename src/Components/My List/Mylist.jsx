@@ -1,8 +1,8 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import "../../../src/App.css";
 import { useState } from "react";
 
-const Banner = () => {
+const Mylist = () => {
   const loaders = useLoaderData();
   const [deleteUser, setDeleteUser] = useState(loaders);
 
@@ -36,6 +36,7 @@ const Banner = () => {
               {" "}
               delete
             </button>
+            <Link to={`/update/${loader._id}`} className="btn"><button>update</button></Link>
           </h1>
         ))}
       </div>
@@ -43,4 +44,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default Mylist;

@@ -57,13 +57,14 @@ const Navbar = () => {
             <NavLink className="text-xl font-semibold" to={"/"}>
               Home
             </NavLink>
-            <NavLink className="text-xl font-semibold mx-5" to={""}>
+            <NavLink className="text-xl font-semibold mx-5" to={'/allturistspot'}>
               All Tourists Spot
             </NavLink>
-            <NavLink className="text-xl font-semibold mr-5" to={""}>
-              Add Tourists Spot
+            {/* home001 */}
+            <NavLink className="text-xl font-semibold mr-5" to={"/addturistspot"}>
+              Add Spot
             </NavLink>
-            <NavLink className="text-xl font-semibold" to={""}>
+            <NavLink className="text-xl font-semibold" to={"/mylist"}>
               My List
             </NavLink>
           </ul>
