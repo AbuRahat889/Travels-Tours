@@ -4,6 +4,7 @@ import PopularPost from "../PopularPost/PopularPost";
 import Slider from "./Slider";
 import PostItem from "../PopularPost/PostItem";
 import BookingPlatform from "../Booking Platform/BookingPlatform";
+import Counter from "../Counter/Counter";
 
 const Home = () => {
   const postloader = useLoaderData();
@@ -19,6 +20,7 @@ const Home = () => {
       }
      </div>
      <BookingPlatform></BookingPlatform>
+     <Counter></Counter>
     </div>
   );
 };
