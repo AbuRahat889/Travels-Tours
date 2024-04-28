@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import Subnav from "./Subnav";
 import { useContext } from "react";
+import './Navbar.css'
 import { AuthContex } from "../../Contex/AuthProvider";
 
 const Navbar = () => {
@@ -52,7 +53,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className="navbar-center hidden lg:flex">
+        <div id="nav" className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 text-[#9ca3a9]">
             <NavLink className="text-xl font-semibold" to={"/"}>
               Home

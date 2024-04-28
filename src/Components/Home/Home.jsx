@@ -14,13 +14,13 @@ const Home = () => {
       <Slider></Slider>
       <Accordian></Accordian>
       <PopularPost></PopularPost>
-     <div className="grid grid-cols-3 align">
-     {
-        postloader.map(loader=><PostItem key={loader.id} loader={loader}></PostItem>)
-      }
-     </div>
-     <BookingPlatform></BookingPlatform>
-     <Counter></Counter>
+      <div className="grid grid-cols-3 align">
+        {postloader.map((loader) => (
+          <PostItem key={loader.id} loader={loader}></PostItem>
+        ))}
+      </div>
+      <BookingPlatform></BookingPlatform>
+      <Counter></Counter>
     </div>
   );
 };
