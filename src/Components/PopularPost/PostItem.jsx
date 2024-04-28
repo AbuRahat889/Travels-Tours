@@ -5,6 +5,7 @@ import { CiMap } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import { FaHeart } from "react-icons/fa6";
 import '../../../src/App.css'
+import '../PopularPost/PostItem.css'
 
 const PostItem = ({ loader }) => {
   return (
@@ -14,7 +15,7 @@ const PostItem = ({ loader }) => {
         <figure className="">
           <div className="indicator">
             <span className="indicator-item border p-3 rounded-full text-xl  mt-10 mr-10 text-white hover:text-red-500"><FaHeart /></span>
-            <img src={loader.photo} alt="tourist-spot" />
+            <img className="zoom" src={loader.photo} alt="tourist-spot" />
           </div>
         </figure>
 
