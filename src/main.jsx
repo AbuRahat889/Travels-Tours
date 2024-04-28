@@ -14,6 +14,8 @@ import Update from "./Components/Update/Update";
 import AllTuristSpot from './Components/All Tourists Spot/AllTuristSpot';
 import AddTuristSpot from "./Components/Add Turist Spot/AddTuristSpot";
 import Mylist from "./Components/My List/Mylist";
+import Details from "./Components/Details/Details";
+
 
 const router = new createBrowserRouter([
   {
@@ -26,20 +28,18 @@ const router = new createBrowserRouter([
       },
       {
         path:'/allturistspot',
-        element:<AllTuristSpot></AllTuristSpot>
+        element:<AllTuristSpot></AllTuristSpot>,
+        loader:()=>fetch(`http://localhost:5000/user`),
       },
       {
-        // path: "/banner",
         path:'/mylist',
-        // element: <Banner></Banner>,
         element:<Mylist></Mylist>,
         loader: () => fetch("http://localhost:5000/user"),
       },
       {
-        // path: "/home001",
-        // element: <Home001></Home001>,
         path:'/addturistspot',
         element:<AddTuristSpot></AddTuristSpot>
+        
       },
       {
         path: "/signin",
@@ -53,6 +53,12 @@ const router = new createBrowserRouter([
         path:'/update/:id',
         element:<Update></Update>,
         loader: ({ params }) => fetch(`http://localhost:5000/user/${params.id}`)    
+      },
+      {
+        path:'/details/:id',
+        element:<Details></Details>,
+        loader: ({ params }) => fetch(`http://localhost:5000/user/${params.id}`)    
+      
       }
     ],
   },

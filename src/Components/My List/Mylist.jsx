@@ -36,6 +36,7 @@ const Mylist = () => {
               {" "}
               delete
             </button>
+            
             <Link to={`/update/${loader._id}`} className="btn"><button>update</button></Link>
           </h1>
         ))}
