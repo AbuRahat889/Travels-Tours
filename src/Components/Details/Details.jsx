@@ -1,4 +1,5 @@
 import { Link, useLoaderData } from "react-router-dom";
+import { TbCoinTaka } from "react-icons/tb";
 
 const Details = () => {
   const loader = useLoaderData();
@@ -39,10 +40,22 @@ const Details = () => {
             src={loader.photo}
             className=" rounded-lg shadow-2xl"
           />
-          <div>
+          <div className="">
             <h1 className="text-5xl font-bold">{loader.tourists_spot_name}</h1>
-            <p className="py-6"> </p>
-            <button className="btn btn-primary">Get Started</button>
+            <p className="py-6 text-2xl">Country : {loader.country_Name}  </p>
+            <hr />
+            <div className="flex justify-between my-5 text-xl">
+                <p>Visitor : {loader.totaVisitorsPerYear} <span>/year</span></p>
+                <p>Seasson : {loader.seasonality}</p>
+            </div>
+            <div className="flex justify-between text-xl mb-5">
+                <p>Time Spand : {loader.travel_time}</p>
+                <p className="flex items-center gap-1"><TbCoinTaka /> {loader.average_cost}</p>
+            </div>
+            <hr />
+            <p className="py-6 text-xl">{loader.description}  </p>
+           
+        
           </div>
         </div>
       </div>

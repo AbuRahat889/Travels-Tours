@@ -1,4 +1,6 @@
 import Accordian from "../Accordian/Accordian";
+import PopularPost from "../PopularPost/PopularPost";
+
 import Slider from "./Slider";
 
 const Home = () => {
@@ -6,6 +8,8 @@ const Home = () => {
         <div>
             <Slider></Slider>
             <Accordian></Accordian>
+            <PopularPost></PopularPost>
+           
         </div>
     );
 };
