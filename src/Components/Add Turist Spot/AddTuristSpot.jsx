@@ -4,9 +4,6 @@ const AddTuristSpot = () => {
   const handleForm = (event) => {
     event.preventDefault();
     const form = event.target;
-    // const email = form.email.value;
-    // const name = form.name.value;
-    // const rahat = form.rahat.value;
     const tourists_spot_name = form.tourists_spot_name.value;
     const country_Name = form.country_Name.value;
 
@@ -20,9 +17,6 @@ const AddTuristSpot = () => {
     const photo = form.photo.value;
 
     const user = {
-      // rahat,
-      // email,
-      // name,
       tourists_spot_name,
       country_Name,
       location,
