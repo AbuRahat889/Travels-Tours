@@ -2,7 +2,7 @@ import CountUp from "react-countup";
 
 const Counter = () => {
   return (
-    <div className="bg-[#40b9eb] h-80 mt-10 flex items-center justify-center">
+    <div className="bg-[#40b9eb] h-80 flex items-center justify-center">
       <div className="flex gap-20">
         <div>
           <div className="flex gap-2 ">

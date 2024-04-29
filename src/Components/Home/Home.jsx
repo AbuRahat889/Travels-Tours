@@ -5,6 +5,8 @@ import Slider from "./Slider";
 import PostItem from "../PopularPost/PostItem";
 import BookingPlatform from "../Booking Platform/BookingPlatform";
 import Counter from "../Counter/Counter";
+import Country from "../Country/Country";
+import CountriDetails from "../Country/CountriDetails";
 
 const Home = () => {
   const postloader = useLoaderData();
@@ -21,6 +23,13 @@ const Home = () => {
       </div>
       <BookingPlatform></BookingPlatform>
       <Counter></Counter>
+      <Country></Country>
+      <div className="grid grid-cols-3">
+      {
+        postloader.map(loader=><CountriDetails key={loader.id} loader={loader}></CountriDetails>)
+      }
+      </div>
+      
     </div>
   );
 };

@@ -17,8 +17,7 @@ import Mylist from "./Components/My List/Mylist";
 import Details from "./Components/Details/Details";
 import ErrorPage from "./Components/Utility/ErrorPage";
 import PrivateRoute from "./Components/Private Route/PrivateRoute";
-
-
+import CountriDetails from "./Components/Country/CountriDetails";
 
 
 const router = new createBrowserRouter([
@@ -69,6 +68,10 @@ const router = new createBrowserRouter([
         element:<Details></Details>,
         loader: ({ params }) => fetch(`http://localhost:5000/user/${params.id}`)    
       
+      },
+      {
+        path:'/countrydetails',
+        element:<CountriDetails></CountriDetails>
       }
     ],
   },

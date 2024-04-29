@@ -68,6 +68,9 @@ const Navbar = () => {
             <NavLink className="text-xl font-semibold" to={"/mylist"}>
               My List
             </NavLink>
+            <NavLink className="text-xl font-semibold" to={"/countrydetails"}>
+            country_Name
+            </NavLink>
             
           </ul>
         </div>
