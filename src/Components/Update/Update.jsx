@@ -3,7 +3,9 @@ import Swal from "sweetalert2";
 
 const Update = () => {
   const loader = useLoaderData();
+
   const handleUpdate = (event) => {
+
     event.preventDefault();
     const form = event.target;
     const tourists_spot_name = form.tourists_spot_name.value;
@@ -27,8 +29,10 @@ const Update = () => {
       seasonality,
       travel_time,
       totaVisitorsPerYear,
-      photo,
+      photo
+      
     };
+    console.log(user);
 
     fetch(`http://localhost:5000/user/${loader._id}`, {
       method: "PUT",
@@ -41,8 +45,6 @@ const Update = () => {
       .then((data) => {
         console.log(data);
         if (data.modifiedCount > 0) {
-          // alert("Update data successfully!!!");
-          // event.reset();
           Swal.fire({
             position: "top-end",
             icon: "success",
@@ -60,9 +62,7 @@ const Update = () => {
         style={{
           backgroundImage:
             "url(https://i.ibb.co/HD6T1yy/markus-winkler-cxo-R55-bels-unsplash.jpg)",
-           
-
-        }}
+         }}
       >
         <div className="hero-overlay bg-opacity-60 h-60"></div>
         <div className="hero-content text-center text-neutral-content">

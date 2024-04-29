@@ -1,7 +1,7 @@
 import { Link, useLoaderData } from "react-router-dom";
 import "../../../src/App.css";
-import { useState } from "react";
 import Swal from "sweetalert2";
+import { useState } from "react";
 
 const Mylist = () => {
   const loaders = useLoaderData();
@@ -11,6 +11,7 @@ const Mylist = () => {
   const handleDelet = (_id) => {
     console.log("delete", _id);
 
+    //use modal
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -26,14 +27,15 @@ const Mylist = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
             if (data.deletedCount > 0) {
               Swal.fire({
                 title: "Deleted!",
                 text: "Your file has been deleted.",
                 icon: "success",
               });
-              const reaming = deleteUser.filter((user) => user._id !== _id);
+              const reaming = deleteUser.filter(
+                (cleanUser) => cleanUser._id !== _id
+              );
               setDeleteUser(reaming);
             }
           });
