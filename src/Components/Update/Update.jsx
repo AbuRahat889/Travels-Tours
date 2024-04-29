@@ -1,11 +1,10 @@
-
-import { useLoaderData } from "react-router-dom";
-
+import { Link, useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Update = () => {
-    const loader = useLoaderData();
-    const handleUpdate = event => {
-        event.preventDefault();
+  const loader = useLoaderData();
+  const handleUpdate = (event) => {
+    event.preventDefault();
     const form = event.target;
     const tourists_spot_name = form.tourists_spot_name.value;
     const country_Name = form.country_Name.value;
@@ -28,42 +27,67 @@ const Update = () => {
       seasonality,
       travel_time,
       totaVisitorsPerYear,
-      photo
+      photo,
     };
 
-        fetch(`http://localhost:5000/user/${loader._id}`,{
-            method:'PUT',
-            headers:{
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(user)
-            
-        })
-        .then(res => res.json())
-        .then(data =>{
-            console.log(data);
-            if(data.modifiedCount > 0 ){
-                alert('Update data successfully!!!')
-            }
-        })
+    fetch(`http://localhost:5000/user/${loader._id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          // alert("Update data successfully!!!");
+          // event.reset();
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Your spot has been Updated",
+            showConfirmButton: false,
+            timer: 1500
+          });
+        }
+      });
+  };
+  return (
+    <div className="">
+      <div
+        className="hero bg-center"
+        style={{
+          backgroundImage:
+            "url(https://i.ibb.co/HD6T1yy/markus-winkler-cxo-R55-bels-unsplash.jpg)",
+           
 
-    }
-    return (
-        <div className="align">
-            {/* <h1>this is update pageeeeee</h1>
-            <h1>name is :  {loader.name} </h1>
+        }}
+      >
+        <div className="hero-overlay bg-opacity-60 h-60"></div>
+        <div className="hero-content text-center text-neutral-content">
+          <div className="max-w-md">
+            <h1 className="mb-5 text-5xl font-bold">Add Turist Spot</h1>
 
-            <form onSubmit={handleUpdate}>
-                <input type="text" name="name" defaultValue={loader.name} id="" />
-                <br />
-                <input type="email" name="email" defaultValue={loader.email} id="" />
-                <br />
-                <input type="submit" value="submit" />
-            </form> */}
+            <div className="text-sm breadcrumbs">
+              <ul>
+                <li>
+                  <Link to={"/"}>Home</Link>
+                </li>
+                <li>
+                  <Link to={"/mylist"}>Mylist</Link>
+                </li>
+                <li>
+                  <Link>Update</Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
 
-
-<div className="bg-[#F4F3F0] p-24 align">
-        <h2 className="text-3xl font-extrabold">Update Turist Spot</h2>
+      <div className="bg-[#F4F3F0] p-24 align">
+        <h2 className="text-3xl font-extrabold">Update Tourists Spot</h2>
         <form onSubmit={handleUpdate}>
           {/* form name and quantity row */}
           <div className="md:flex mb-8">
@@ -215,9 +239,8 @@ const Update = () => {
           <input type="submit" value="Update" className="btn btn-block" />
         </form>
       </div>
-            
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Update;

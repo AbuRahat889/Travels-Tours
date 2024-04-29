@@ -1,7 +1,7 @@
 import { Link, useLoaderData } from "react-router-dom";
 import "../../../src/App.css";
 import { useState } from "react";
-
+import Swal from "sweetalert2";
 
 const Mylist = () => {
   const loaders = useLoaderData();
@@ -11,18 +11,34 @@ const Mylist = () => {
   const handleDelet = (_id) => {
     console.log("delete", _id);
 
-    fetch(`http://localhost:5000/user/${_id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.deletedCount > 0) {
-          alert("Deleted Data successfully..");
-          const reaming = deleteUser.filter((user) => user._id !== _id);
-          setDeleteUser(reaming);
-        }
-      });
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/user/${_id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success",
+              });
+              const reaming = deleteUser.filter((user) => user._id !== _id);
+              setDeleteUser(reaming);
+            }
+          });
+      }
+    });
   };
 
   return (
@@ -32,7 +48,7 @@ const Mylist = () => {
         className="hero"
         style={{
           backgroundImage:
-            "url(https://i.ibb.co/372jQVq/mountains-3059528-1920.jpg)",
+            "url(https://i.ibb.co/18rms31/cathryn-lavery-f-MD-Cru6-OTk-unsplash.jpg)",
         }}
       >
         <div className="hero-overlay bg-opacity-60 h-60"></div>
@@ -53,13 +69,6 @@ const Mylist = () => {
           </div>
         </div>
       </div>
-      {/* <button onClick={() => handleDelet(loader._id)} className="btn">
-              {" "}
-              delete
-            </button>
-            <Link to={`/update/${loader._id}`} className="btn">
-              <button>update</button>
-            </Link> */}
 
       <div className="align"></div>
 
@@ -79,7 +88,7 @@ const Mylist = () => {
             {loaders.map((loader) => (
               <tr className="text-xl" key={loader.id}>
                 <th></th>
-                <td >{loader.country_Name}</td>
+                <td>{loader.country_Name}</td>
                 <td>{loader.location}</td>
                 <td>{loader.average_cost}</td>
                 <td>

@@ -15,7 +15,7 @@ const PostItem = ({ loader }) => {
         <figure className="">
           <div className="indicator">
             <span className="indicator-item border p-3 rounded-full text-xl  mt-10 mr-10 text-white hover:text-red-500"><FaHeart /></span>
-            <img className="zoom" src={loader.photo} alt="tourist-spot" />
+            <img className="zoom" src={loader.photo} alt={loader.country_Name} />
           </div>
         </figure>
 
