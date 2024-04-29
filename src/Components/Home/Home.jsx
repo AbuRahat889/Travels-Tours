@@ -24,7 +24,7 @@ const Home = () => {
       <BookingPlatform></BookingPlatform>
       <Counter></Counter>
       <Country></Country>
-      <div className="grid grid-cols-3">
+      <div className="grid grid-cols-3 align">
       {
         postloader.map(loader=><CountriDetails key={loader.id} loader={loader}></CountriDetails>)
       }

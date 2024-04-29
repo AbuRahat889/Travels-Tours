@@ -20,7 +20,7 @@ const Accordian = () => {
       <div className="bg-[#082740] h-48 -mt-10">
         <div className="align flex justify-around">
           {/* card01 */}
-          <div className="card rounded-none w-64 bg-white mt-20 hover:bg-[#40b9eb] delay-200  ">
+          <div className="card rounded-none w-64 bg-base-200 mt-20 hover:bg-[#40b9eb] delay-200  ">
             <div className="card-body items-center text-center hover:text-white delay-200">
               <GrUserManager className="text-7xl " />
               <h2 className="card-title text-2xl">

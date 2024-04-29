@@ -2,7 +2,6 @@ const Country = () => {
 
   return (
     <div className=" align">
-      {/* <h1>loader :{sliceData.length} </h1> */}
       <div className="mt-20">
         <h1 className="text-yellow-500 font-bold text-xl tracking-widest">
           CHECKOUT FEATURED
