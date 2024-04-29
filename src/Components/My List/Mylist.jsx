@@ -2,6 +2,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import "../../../src/App.css";
 import { useState } from "react";
 
+
 const Mylist = () => {
   const loaders = useLoaderData();
   const [deleteUser, setDeleteUser] = useState(loaders);
@@ -52,20 +53,53 @@ const Mylist = () => {
           </div>
         </div>
       </div>
-
-      <div className="align">
-        {loaders.map((loader) => (
-          <h1 key={loader._id}>
-            {loader.name} : {loader.email} : {loader._id}
-            <button onClick={() => handleDelet(loader._id)} className="btn">
+      {/* <button onClick={() => handleDelet(loader._id)} className="btn">
               {" "}
               delete
             </button>
             <Link to={`/update/${loader._id}`} className="btn">
               <button>update</button>
-            </Link>
-          </h1>
-        ))}
+            </Link> */}
+
+      <div className="align"></div>
+
+      <div className="overflow-x-auto align">
+        <table className="table table-zebra">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Location</th>
+              <th>Cost</th>
+              <th>Update</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {loaders.map((loader) => (
+              <tr className="text-xl" key={loader.id}>
+                <th></th>
+                <td >{loader.country_Name}</td>
+                <td>{loader.location}</td>
+                <td>{loader.average_cost}</td>
+                <td>
+                  <Link to={`/update/${loader._id}`} className="btn btn-info">
+                    update
+                  </Link>
+                </td>
+                <td>
+                  <button
+                    onClick={() => handleDelet(loader._id)}
+                    className="btn btn-warning"
+                  >
+                    {" "}
+                    delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );

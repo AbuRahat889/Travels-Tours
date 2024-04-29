@@ -6,6 +6,7 @@ import { AuthContex } from "../../Contex/AuthProvider";
 
 const Navbar = () => {
   const {user, logOut} = useContext(AuthContex);
+  
 
   //handle logout btn
   const handleLogout = ()=>{
@@ -68,9 +69,8 @@ const Navbar = () => {
             <NavLink className="text-xl font-semibold" to={"/mylist"}>
               My List
             </NavLink>
-            <NavLink className="text-xl font-semibold" to={"/countrydetails"}>
-            country_Name
-            </NavLink>
+    
+            
             
           </ul>
         </div>
