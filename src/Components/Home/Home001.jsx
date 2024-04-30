@@ -8,9 +8,8 @@ const Home001 = () => {
     const user = { name, email };
     console.log(user);
 
-
     // create post
-    fetch("http://localhost:5000/user", {
+    fetch("https://back-end-gold-six.vercel.app/user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -20,9 +19,9 @@ const Home001 = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if(data.insertedId){
-            alert("users add successfully!!");
-            form.reset();
+        if (data.insertedId) {
+          alert("users add successfully!!");
+          form.reset();
         }
       });
   };

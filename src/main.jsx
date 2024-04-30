@@ -11,7 +11,7 @@ import SignUp from "./Components/SignUp/SignUp";
 import Update from "./Components/Update/Update";
 
 // import AuthProvider from './Contex/AuthProvider'
-import AllTuristSpot from './Components/All Tourists Spot/AllTuristSpot';
+import AllTuristSpot from "./Components/All Tourists Spot/AllTuristSpot";
 import AddTuristSpot from "./Components/Add Turist Spot/AddTuristSpot";
 import Mylist from "./Components/My List/Mylist";
 import Details from "./Components/Details/Details";
@@ -19,60 +19,63 @@ import ErrorPage from "./Components/Utility/ErrorPage";
 import PrivateRoute from "./Components/Private Route/PrivateRoute";
 import CountriDetails from "./Components/Country/CountriDetails";
 
-
 const router = new createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
-    errorElement:<ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
         element: <Home></Home>,
-        loader:()=> fetch('http://localhost:5000/user'),
+        loader: () => fetch("https://back-end-gold-six.vercel.app/user"),
       },
       {
-        path:'/allturistspot',
-        element:<AllTuristSpot></AllTuristSpot>,
-        loader:()=>fetch('http://localhost:5000/user'),
+        path: "/allturistspot",
+        element: <AllTuristSpot></AllTuristSpot>,
+        loader: () => fetch("https://back-end-gold-six.vercel.app/user"),
       },
       {
-        path:'/mylist',
-        element:<PrivateRoute>
-          <Mylist></Mylist>
-        </PrivateRoute>,
-        loader: () => fetch("http://localhost:5000/user"),
+        path: "/mylist",
+        element: (
+          <PrivateRoute>
+            <Mylist></Mylist>
+          </PrivateRoute>
+        ),
+        loader: () => fetch("https://back-end-gold-six.vercel.app/user"),
       },
       {
-        path:'/addturistspot',
-        element:<PrivateRoute>
-          <AddTuristSpot></AddTuristSpot>
-        </PrivateRoute>
-        
+        path: "/addturistspot",
+        element: (
+          <PrivateRoute>
+            <AddTuristSpot></AddTuristSpot>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/signin",
         element: <SignIn></SignIn>,
       },
       {
-        path:'/signup',
-        element:<SignUp></SignUp>
+        path: "/signup",
+        element: <SignUp></SignUp>,
       },
       {
-        path:'/update/:id',
-        element:<Update></Update>,
-        loader: ({ params }) => fetch(`http://localhost:5000/user/${params.id}`)    
+        path: "/update/:id",
+        element: <Update></Update>,
+        loader: ({ params }) =>
+          fetch(`https://back-end-gold-six.vercel.app/user/${params.id}`),
       },
       {
-        path:'/details/:id',
-        element:<Details></Details>,
-        loader: ({ params }) => fetch(`http://localhost:5000/user/${params.id}`)    
-      
+        path: "/details/:id",
+        element: <Details></Details>,
+        loader: ({ params }) =>
+          fetch(`https://back-end-gold-six.vercel.app/user/${params.id}`),
       },
       {
-        path:'/countrydetails',
-        element:<CountriDetails></CountriDetails>
-      }
+        path: "/countrydetails",
+        element: <CountriDetails></CountriDetails>,
+      },
     ],
   },
 ]);

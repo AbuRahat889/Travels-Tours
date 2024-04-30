@@ -1,10 +1,14 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { TbCoinTaka } from "react-icons/tb";
+import { Helmet } from "react-helmet-async";
 
 const Details = () => {
   const loader = useLoaderData();
   return (
     <div>
+      <Helmet>
+        <title>WanderWise | View Details</title>
+      </Helmet>
       <div
         className="hero"
         style={{

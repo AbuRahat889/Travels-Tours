@@ -2,6 +2,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import "../../../src/App.css";
 import Swal from "sweetalert2";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const Mylist = () => {
   const loaders = useLoaderData();
@@ -22,7 +23,7 @@ const Mylist = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/user/${_id}`, {
+        fetch(`https://back-end-gold-six.vercel.app/user/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -45,6 +46,9 @@ const Mylist = () => {
 
   return (
     <div className="">
+      <Helmet>
+        <title>WanderWise | My List</title>
+      </Helmet>
       {/* hero  */}
       <div
         className="hero"

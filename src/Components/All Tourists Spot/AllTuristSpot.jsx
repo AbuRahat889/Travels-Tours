@@ -2,11 +2,15 @@ import { Link, useLoaderData } from "react-router-dom";
 import "../../../src/App.css";
 import { FaCalendarDays } from "react-icons/fa6";
 import { TbCoinTaka } from "react-icons/tb";
+import { Helmet } from "react-helmet-async";
 
 const AllTuristSpot = () => {
   const turistSpot = useLoaderData();
   return (
     <div>
+      <Helmet>
+        <title>WanderWise | AllTuristSpot</title>
+      </Helmet>
       {/* hero  */}
       <div
         className="hero"
@@ -35,7 +39,6 @@ const AllTuristSpot = () => {
       {/* end hero */}
 
       <div className="align ">
-        <h1>length {turistSpot.length}</h1>
         {turistSpot.map((spot) => (
           <div key={spot._id}>
             <div className="card lg:card-side bg-base-100 shadow-xl mb-5">

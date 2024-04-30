@@ -1,8 +1,8 @@
-
 // import Swal from "sweetalert2";
 import Swal from "sweetalert2";
 import "../../../src/App.css";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 const AddTuristSpot = () => {
   const handleForm = (event) => {
     event.preventDefault();
@@ -28,12 +28,12 @@ const AddTuristSpot = () => {
       seasonality,
       travel_time,
       totaVisitorsPerYear,
-      photo
+      photo,
     };
     console.log(user);
 
     // create post
-    fetch("http://localhost:5000/user", {
+    fetch("https://back-end-gold-six.vercel.app/user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -50,7 +50,7 @@ const AddTuristSpot = () => {
             icon: "success",
             title: "Your work has been saved",
             showConfirmButton: false,
-            timer: 1500
+            timer: 1500,
           });
           form.reset();
         }
@@ -58,6 +58,11 @@ const AddTuristSpot = () => {
   };
   return (
     <div className="">
+      <Helmet>
+        <title>WanderWise | Add To turist Spot</title>
+      </Helmet>
+
+
       {/* hero  */}
       <div
         className="hero"
@@ -84,7 +89,6 @@ const AddTuristSpot = () => {
           </div>
         </div>
       </div>
-
 
       <div className="bg-[#F4F3F0] p-24 align">
         <h2 className="text-3xl font-extrabold">Add a Turist Spot</h2>
@@ -230,8 +234,6 @@ const AddTuristSpot = () => {
           <input type="submit" value="Add Spot" className="btn btn-block" />
         </form>
       </div>
-
-      
     </div>
   );
 };

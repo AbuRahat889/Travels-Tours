@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -5,7 +6,6 @@ const Update = () => {
   const loader = useLoaderData();
 
   const handleUpdate = (event) => {
-
     event.preventDefault();
     const form = event.target;
     const tourists_spot_name = form.tourists_spot_name.value;
@@ -29,12 +29,11 @@ const Update = () => {
       seasonality,
       travel_time,
       totaVisitorsPerYear,
-      photo
-      
+      photo,
     };
     console.log(user);
 
-    fetch(`http://localhost:5000/user/${loader._id}`, {
+    fetch(`https://back-end-gold-six.vercel.app/user/${loader._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -50,19 +49,22 @@ const Update = () => {
             icon: "success",
             title: "Your spot has been Updated",
             showConfirmButton: false,
-            timer: 1500
+            timer: 1500,
           });
         }
       });
   };
   return (
     <div className="">
+      <Helmet>
+        <title>WanderWise | Update </title>
+      </Helmet>
       <div
         className="hero bg-center"
         style={{
           backgroundImage:
             "url(https://i.ibb.co/HD6T1yy/markus-winkler-cxo-R55-bels-unsplash.jpg)",
-         }}
+        }}
       >
         <div className="hero-overlay bg-opacity-60 h-60"></div>
         <div className="hero-content text-center text-neutral-content">
