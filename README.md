@@ -6,7 +6,7 @@
 -install- npm i  <br/>
 -install- express, cors, mongodb  <br/>
 
-#Feture <br/>
+# Features <br/>
 -Authentication  <br/>
 -Show tourist Spot  <br/>
 -Add tourist Spot   <br/>
