@@ -1,10 +1,15 @@
-Live Site : https://wanderwise-65043.web.app
-# React + Vite
+[Live Site](https://wanderwise-65043.web.app) <br/>
+[Server site github](https://github.com/AbuRahat889/wanderwiser-server) <br/>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# WanderWiser  <br/>
+# How to use:  <br/>
+-install- npm i  <br/>
+-install- express, cors, mongodb  <br/>
 
-Currently, two official plugins are available:
+#Feture <br/>
+-Authentication  <br/>
+-Show tourist Spot  <br/>
+-Add tourist Spot   <br/>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# B9A10-client-side-AbuRahat889
+
+
